@@ -1,0 +1,67 @@
+<section>
+<button
+  mat-fab
+  aria-label="Example icon button with a home icon"
+  class="bg-danger undo-btn"
+  (click)="return()"
+>
+  <mat-icon>undo</mat-icon>
+</button>
+<h1
+  class="display-5 fw-bold text-center text-body-emphasis"
+  style="font-size: 2em; padding-top: 5em; padding-bottom: 2em"
+>
+  Dodaj członka
+</h1>
+<form class="form" #form="ngForm" (submit)="addMember()">
+  <mat-form-field>
+    <mat-label>Imię</mat-label>
+    <input
+      class="form__input"
+      matInput
+      name="name"
+      [(ngModel)]="newMember.name"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nazwisko</mat-label>
+    <input matInput name="surname" [(ngModel)]="newMember.surname" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Wybierz</mat-label>
+    <mat-select name="sex" [(ngModel)]="newMember.sex" required>
+      <mat-option value="Męzczyzna">Męzczyzna</mat-option>
+      <mat-option value="Kobieta">Kobieta</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Klasa</mat-label>
+    <input matInput name="class" [(ngModel)]="newMember.class" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Data urodzenia</mat-label>
+    <input matInput name="birthday" [(ngModel)]="newMember.birthday" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Adres</mat-label>
+    <input matInput name="address" [(ngModel)]="newMember.address" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>E-mail</mat-label>
+    <input matInput name="email" [(ngModel)]="newMember.email" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Telefon</mat-label>
+    <input matInput name="phone" [(ngModel)]="newMember.phone" required />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    class="bg-danger text-light btn my-5"
+    [disabled]="!form.valid"
+    type="submit"
+  >
+    Dodaj
+  </button>
+</form>
+</section>

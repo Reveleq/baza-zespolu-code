@@ -1,0 +1,42 @@
+<section>
+<div
+  class="modal modal-sheet position- d-block bg-body-secondary p-4 py-md-5 my-auto"
+  tabindex="-1"
+  role="dialog"
+  id="modalSheet"
+>
+  <div class="modal__bg"></div>
+  <div
+    class="modal-dialog"
+    role="document"
+    style="z-index: 22; top: 50%; transform: translateY(-50%)"
+  >
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h1 class="modal-title mx-5 mt-4" style="font-size: 1.8em">Dane</h1>
+        <button
+          type="button"
+          class="btn-close px-5"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="close()"
+        ></button>
+      </div>
+      <div class="modal-body py-0">
+        <p class="mx-5">
+          Imię i nazwisko - {{ member.name }} {{ member.surname }}
+        </p>
+        <p class="mx-5">klasa - {{ member.class }}</p>
+        <p class="mx-5">Płeć - {{ member.sex }}</p>
+        <p class="mx-5">Data urodzenia - {{ member.birthday }}</p>
+        <p class="mx-5">Adres - {{ member.address }}</p>
+        <p class="mx-5">Numer telefonu - {{ member.phone }}</p>
+        <p class="mx-5">Adres email - {{ member.email }}</p>
+        <a routerLink="/baza/edytuj-czlonka/{{member.id}}" class="btn btn-danger btn-lg mb-5 mt-4 mx-5"
+          >Edytuj</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+</section>

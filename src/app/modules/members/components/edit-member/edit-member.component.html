@@ -1,0 +1,77 @@
+<section>
+  <button
+    mat-fab
+    aria-label="Example icon button with a home icon"
+    class="bg-danger undo-btn"
+    (click)="return()"
+  >
+    <mat-icon>undo</mat-icon>
+  </button>
+  <h1
+    class="display-5 fw-bold text-center text-body-emphasis"
+    style="font-size: 2em; padding-top: 5em; padding-bottom: 2em"
+  >
+    Edytuj członka
+  </h1>
+  <form class="form" #form="ngForm" (submit)="editMember()">
+    <mat-form-field>
+      <mat-label>Imię</mat-label>
+      <input
+        class="form__input"
+        matInput
+        name="name"
+        [(ngModel)]="member.name"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nazwisko</mat-label>
+      <input matInput name="surname" [(ngModel)]="member.surname" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Wybierz</mat-label>
+      <mat-select name="sex" [(ngModel)]="member.sex" required>
+        <mat-option value="Męzczyzna">Męzczyzna</mat-option>
+        <mat-option value="Kobieta">Kobieta</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Klasa</mat-label>
+      <input matInput name="class" [(ngModel)]="member.class" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Data urodzenia</mat-label>
+      <input matInput name="birthday" [(ngModel)]="member.birthday" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Adres</mat-label>
+      <input matInput name="address" [(ngModel)]="member.address" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>E-mail</mat-label>
+      <input matInput name="email" [(ngModel)]="member.email" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Telefon</mat-label>
+      <input matInput name="phone" [(ngModel)]="member.phone" required />
+    </mat-form-field>
+    <div class="buttons">
+      <button
+        mat-raised-button
+        class="bg-danger text-light btn mt-5 mx-3"
+        [disabled]="!form.valid"
+        type="submit"
+      >
+        Edytuj
+      </button>
+      <button
+        mat-raised-button
+        class="bg-danger text-light btn mt-5 mx-3"
+        type="button"
+        (click)="delete()"
+      >
+        Usuń
+      </button>
+    </div>
+  </form>
+</section>

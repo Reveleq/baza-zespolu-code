@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+$red: #c6493a;
+$dark-red: #a23327;
+$very-dark-red: #680101;
+$light: #edf2f4;
+$dark: #2b2d4a;
+$brown: #ae8173;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  padding-top: 5rem;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #edf2f4;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.undo-btn {
+  position: absolute;
+  top: 5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+section{
+  min-height: 100vh;
+}

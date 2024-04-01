@@ -1,0 +1,185 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "test@test.pl",
+      "password": "12345678",
+      "username": "admin"
+    }
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "firstname": "test",
+      "surname": "admin",
+      "email": "tesr@test.pl",
+      "phone": "123123",
+      "address": "wiktor 180",
+      "postcode": "111-111"
+    }
+  ],
+  "members": [
+    {
+      "name": "dsadas",
+      "surname": "eqwe",
+      "birthday": "wqeqw",
+      "address": "wqeqwe",
+      "sex": "Męzczyzna",
+      "phone": "wqeqwe",
+      "email": "qwe",
+      "class": "21",
+      "id": 4
+    },
+    {
+      "name": "ewqeqw",
+      "surname": "eqwe",
+      "birthday": "00000",
+      "address": "test",
+      "sex": "Męzczyzna",
+      "phone": "213",
+      "email": "ewqeqw",
+      "class": "2",
+      "id": 5
+    },
+    {
+      "name": "ewqeqw",
+      "surname": "Lista_wyciecz.doc",
+      "birthday": "ewq",
+      "address": "test",
+      "sex": "Męzczyzna",
+      "phone": "23",
+      "email": "3",
+      "class": "32",
+      "id": 6
+    },
+    {
+      "name": "ewqeqw",
+      "surname": "eqwe",
+      "birthday": "3",
+      "address": "3",
+      "sex": "Męzczyzna",
+      "phone": "3",
+      "email": "3",
+      "class": "02",
+      "id": 7
+    }
+  ],
+  "docs": [],
+  "kapelusz": [
+    {
+      "id": 1,
+      "name": "test",
+      "surname": "testowy",
+      "class": 1
+    },
+    {
+      "id": 2,
+      "name": "test",
+      "surname": "testowy",
+      "class": 1
+    },
+    {
+      "id": 4,
+      "name": "test",
+      "surname": "testowy",
+      "class": 1
+    }
+  ],
+  "korzuch": [
+    {
+      "id": 1,
+      "name": "test1",
+      "surname": "testowy",
+      "class": 1
+    },
+    {
+      "id": 2,
+      "name": "test2",
+      "surname": "testowy",
+      "class": 1
+    },
+    {
+      "id": 3,
+      "name": "test3",
+      "surname": "testowy",
+      "class": 1
+    },
+    {
+      "id": 4,
+      "name": "test4",
+      "surname": "testowy",
+      "class": 1
+    }
+  ],
+  "pas": [
+    {
+      "id": 1,
+      "name": "test",
+      "surname": "testowy1",
+      "class": 1
+    },
+    {
+      "id": 2,
+      "name": "test",
+      "surname": "testowy2",
+      "class": 1
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "surname": "testowy3",
+      "class": 1
+    },
+    {
+      "id": 4,
+      "name": "test",
+      "surname": "testowy4",
+      "class": 1
+    },
+    {
+      "name": "123",
+      "surname": "test",
+      "class": 1,
+      "id": 5
+    }
+  ],
+  "portki": [
+    {
+      "id": 1,
+      "name": "test",
+      "surname": "testowy",
+      "class": 1
+    },
+    {
+      "id": 2,
+      "name": "test",
+      "surname": "testowy",
+      "class": 2
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "surname": "testowy",
+      "class": 3
+    },
+    {
+      "id": 4,
+      "name": "test",
+      "surname": "testowy",
+      "class": 4
+    },
+    {
+      "name": "dsadas",
+      "surname": "eqwe",
+      "class": 21,
+      "id": 5
+    }
+  ],
+  "timetable": [
+    {
+      "name": "występ w straży",
+      "date": "2024-04-30T22:00:00.000Z",
+      "id": 1
+    }
+  ]
+}

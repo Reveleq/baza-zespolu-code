@@ -1,0 +1,72 @@
+<section>
+  <h1
+    class="text-center display-5 fw-bold text-body-emphasis"
+    style="padding-top: 5em; font-size: 2em"
+  >
+    Rekwizyty
+  </h1>
+
+  <div
+    class="check-box d-flex justify-content-center align-items-center flex-column"
+  >
+    <button
+      mat-fab
+      class="bg-danger text-light my-5 btn"
+      routerLink="/baza/dodaj-rekwizyt"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+    <mat-chip-listbox
+      class="mt-5"
+      #listbox
+      aria-label="Fish selection"
+      [(ngModel)]="type"
+      required
+    >
+      <mat-chip-option value="kapelusz">Kapelusz</mat-chip-option>
+      <mat-chip-option value="korzuch">Korzuch</mat-chip-option>
+      <mat-chip-option value="pas">Pas</mat-chip-option>
+      <mat-chip-option value="portki">Portki</mat-chip-option>
+    </mat-chip-listbox>
+    <button
+      mat-raised-button
+      class="bg-danger text-light my-5 btn"
+      [disabled]="!type"
+      (click)="search(type)"
+    >
+      Sortuj
+    </button>
+  </div>
+  <div class="table-container" *ngIf="showTable">
+    <table mat-table [dataSource]="equipment" class="mat-elevation-z8">
+      <ng-container matColumnDef="lp">
+        <th mat-header-cell *matHeaderCellDef>Lp.</th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          {{ i + 1 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Imię</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="surname">
+        <th mat-header-cell *matHeaderCellDef>Nazwisko</th>
+        <td mat-cell *matCellDef="let element">{{ element.surname }}</td>
+      </ng-container>
+      <ng-container matColumnDef="class">
+        <th mat-header-cell *matHeaderCellDef>Klasa</th>
+        <td mat-cell *matCellDef="let element">{{ element.class }}</td>
+      </ng-container>
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>Akcja</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="deleteMember(element.id, type)">
+            Usuń
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</section>

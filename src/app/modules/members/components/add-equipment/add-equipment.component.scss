@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  mat-form-field {
+    width: 95%;
+    max-width: 40rem;
+  }
+  .table-container {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 5em;
+    min-height: 20rem;
+    max-height: 80rem;
+    max-width: 80rem;
+    overflow: auto;
+  }
+  .btn:disabled {
+    background-color: rgb(0, 0, 0);
+  }
+ 

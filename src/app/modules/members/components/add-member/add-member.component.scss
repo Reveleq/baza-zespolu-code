@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 95%;
+  max-width: 40rem;
+}
+.btn:disabled {
+  background-color: rgb(0, 0, 0);
+}

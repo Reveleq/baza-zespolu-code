@@ -1,0 +1,51 @@
+<section class="login">
+  <div class="container">
+    <h1 class="text-center my-5">Zaloguj się</h1>
+    <form
+      #form="ngForm"
+      class="d-flex flex-column justify-content-center align-items-center"
+      (submit)="login()"
+    >
+      <mat-form-field>
+        <mat-label>Wpisz nazwę uzytkownika</mat-label>
+        <input
+          matInput
+          name="username"
+          [(ngModel)]="userData.username"
+          required
+          minlength="4"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Wpisz hasło</mat-label>
+        <input
+          matInput
+          name="password"
+          [(ngModel)]="userData.password"
+          [type]="hide ? 'password' : 'text'"
+          required
+          minlength="8"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="warn"
+        class="my-5"
+        [disabled]="!form.valid"
+        type="submit"
+      >
+        Zaloguj się
+      </button>
+      <p class="text-center">{{ errorMessage }}</p>
+    </form>
+  </div>
+</section>

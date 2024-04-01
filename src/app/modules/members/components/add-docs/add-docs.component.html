@@ -1,0 +1,40 @@
+<section>
+<button
+  mat-fab
+  aria-label="Example icon button with a home icon"
+  class="bg-danger undo-btn"
+  (click)="return()"
+>
+  <mat-icon>undo</mat-icon>
+</button>
+<h1
+  class="display-5 fw-bold text-center text-body-emphasis"
+  style="font-size: 2em; padding-top: 5em; padding-bottom: 2em"
+>
+  Dodaj członka
+</h1>
+<form class="form" #form="ngForm" (submit)="addDocs()">
+  <mat-form-field>
+    <mat-label>Nazwa dokumentu</mat-label>
+    <input
+      class="form__input"
+      matInput
+      name="name"
+      [(ngModel)]="newDocs.content"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nazwa pliku (z rozszerzeniem)</mat-label>
+    <input matInput name="surname" [(ngModel)]="newDocs.href" required />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    class="bg-danger text-light btn my-5"
+    [disabled]="!form.valid"
+    type="submit"
+  >
+    Dodaj
+  </button>
+</form>
+</section>

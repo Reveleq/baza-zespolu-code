@@ -1,0 +1,87 @@
+<section>
+  <h1
+    class="display-5 fw-bold text-center text-body-emphasis"
+    style="font-size: 2em; padding-top: 5em; padding-bottom: 1em"
+  >
+    Grafik koncertów
+  </h1>
+  <button
+    mat-fab
+    aria-label="button with a bookmark icon "
+    class="plus bg-danger d-block mx-auto mb-5"
+    (click)="show = !show; clg()"
+    [disabled]="show && date.name"
+  >
+    <mat-icon class="text-light">add</mat-icon>
+  </button>
+
+  <form
+    #form="ngForm"
+    class="d-flex flex-column align-items-center"
+    *ngIf="show"
+    (submit)="addDate()"
+  >
+    <mat-form-field>
+      <mat-label id="name">Nazwa</mat-label>
+      <input name="name" matInput [(ngModel)]="date.name" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label id="date">Wybierz datę</mat-label>
+      <input
+        name="date"
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="date.date"
+        required
+      />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      class="bg-danger text-light btn mt-5 mx-3"
+      [disabled]="!form.valid"
+      type="submit"
+    >
+      Dodaj
+    </button>
+  </form>
+  <div
+    class="modal modal-sheet position-static d-flex p-6 align-items-center justify-content-center flex-wrap"
+    tabindex="-1"
+    role="dialog"
+    id="modalSheet"
+  >
+    <div
+      class="modal-dialog"
+      *ngFor="let timetable of timetable"
+      style="width: 90%; max-width: 32rem; margin: 2em"
+    >
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header border-bottom-0">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="deleteTimetable(timetable.id)"
+          ></button>
+        </div>
+        <div class="modal-body py-0">
+          <p class="my-5 fw-bold" style="font-size: 2rem; text-align: center">
+            {{ timetable.date.toString().slice(0, 10) }}
+          </p>
+          <p class="my-5" style="font-size: 1.8rem; text-align: center">
+            {{ timetable.name }}
+          </p>
+        </div>
+        <div
+          class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0"
+        ></div>
+      </div>
+    </div>
+  </div>
+</section>

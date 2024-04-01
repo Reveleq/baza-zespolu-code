@@ -1,0 +1,56 @@
+<section>
+<h1
+  class="display-5 fw-bold text-center text-body-emphasis"
+  style="font-size: 2em; padding-top: 5em; padding-bottom: 1em"
+>
+  Dokumenty
+</h1>
+<button
+  mat-button
+  class="bg-danger text-light d-block mx-auto"
+  routerLink="/baza/dodaj-dokument"
+>
+  Dodaj
+</button>
+
+<div class="album py-5">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col" *ngFor="let doc of docs">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div
+              class="header border-bottom-0"
+              style="position: relative; margin: 0.5em"
+            >
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                (click)="deleteDoc(doc.id)"
+              ></button>
+            </div>
+            <p class="card-text" style="font-size: 1.6rem; padding: 1em 0.5em">
+              {{ doc.content }}
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a
+                  mat-button
+                  class="bg-danger text-light"
+                  style="margin-left: 0.5em; margin-bottom: 1em"
+                  href="assets/docs/{{ doc.href }}"
+                  target="_blank"
+                  download
+                  >Pobierz</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

@@ -1,0 +1,128 @@
+<section>
+  <button
+    mat-fab
+    aria-label="Example icon button with a home icon"
+    class="bg-danger undo-btn"
+    (click)="return()"
+  >
+    <mat-icon>undo</mat-icon>
+  </button>
+  <h1
+    class="text-center display-5 fw-bold text-body-emphasis"
+    style="padding-top: 5em; font-size: 2em"
+  >
+    Dodaj rekwizyt
+  </h1>
+  <h2
+    class="text-center display-5 fw-300 text-body-emphasis"
+    style="padding-top: 2em; font-size: 1.6em"
+  >
+    Wybierz kategorie
+  </h2>
+  <form action="" class="form" #form="ngForm">
+    <mat-chip-listbox
+      style="margin: 2em"
+      name="listbox"
+      aria-label="Fish selection"
+      [(ngModel)]="type"
+      required
+    >
+      <mat-chip-option value="kapelusz">Kapelusz</mat-chip-option>
+      <mat-chip-option value="korzuch">Korzuch</mat-chip-option>
+      <mat-chip-option value="pas">Pas</mat-chip-option>
+      <mat-chip-option value="portki">Portki</mat-chip-option>
+    </mat-chip-listbox>
+
+    <div
+      class="d-flex flex-column justify-content-center align-items-center"
+      *ngIf="!showTable"
+    >
+      <h2
+        class="text-center display-5 fw-300 text-body-emphasis"
+        style="padding-top: 2em; font-size: 1.6em"
+      >
+        zatwierdź dane
+      </h2>
+      <mat-form-field>
+        <mat-label>Imię</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="memberData.name"
+          name="name"
+          #name
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nazwisko</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="memberData.surname"
+          name="surname"
+          #surname
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>klasa</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="memberData.class"
+          name="class"
+          #class
+        />
+      </mat-form-field>
+      <button
+        mat-raised-button
+        class="btn bg-danger text-light"
+        [disabled]="!form.valid"
+        (click)="add(name.value, surname.value, class.value)"
+      >
+        Dodaj
+      </button>
+      <button
+        mat-raised-button
+        class="btn bg-danger text-light mt-4"
+        (click)="back()"
+      >
+        Wstecz
+      </button>
+    </div>
+  </form>
+
+  <div class="table-container" *ngIf="showTable">
+    <h2
+      class="text-center display-5 fw-300 text-body-emphasis"
+      style="padding-bottom: 1em; font-size: 1.6em"
+    >
+      Wybierz członka zespołu
+    </h2>
+    <table mat-table [dataSource]="date" class="mat-elevation-z8">
+      <ng-container matColumnDef="lp">
+        <th mat-header-cell *matHeaderCellDef>lp</th>
+        <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Imię</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="surname">
+        <th mat-header-cell *matHeaderCellDef>Nazwisko</th>
+        <td mat-cell *matCellDef="let element">{{ element.surname }}</td>
+      </ng-container>
+      <ng-container matColumnDef="class">
+        <th mat-header-cell *matHeaderCellDef>Klasa</th>
+        <td mat-cell *matCellDef="let element">{{ element.class }}</td>
+      </ng-container>
+      <ng-container matColumnDef="more-info">
+        <th mat-header-cell *matHeaderCellDef>Wybierz</th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          <button mat-button (click)="chooseMember(i)">Kliknij</button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</section>
