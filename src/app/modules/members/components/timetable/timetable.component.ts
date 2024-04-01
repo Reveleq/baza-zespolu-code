@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, elementAt, map } from 'rxjs';
 import { Timetable } from 'src/app/modules/core/models/members-models';
 import { MemberApiService } from 'src/app/modules/core/services/member-api.service';
 

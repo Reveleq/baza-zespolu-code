@@ -4,7 +4,6 @@ import { MemberApiService } from 'src/app/modules/core/services/member-api.servi
 import { MemberService } from 'src/app/modules/core/services/member.service';
 import { Location } from '@angular/common';
 import { Docs } from 'src/app/modules/core/models/docs-model';
-import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-docs',
   templateUrl: './add-docs.component.html',

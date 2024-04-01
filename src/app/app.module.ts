@@ -7,9 +7,7 @@ import { CoreModule } from './modules/core/core.module';
 import { HomeModule } from './modules/home/home.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
-import localePl from '@angular/common/locales/pl';
-import { registerLocaleData } from '@angular/common';
-import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MembersModule } from './modules/members/members.module';
 @NgModule({
   declarations: [AppComponent],

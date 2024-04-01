@@ -1,6 +1,4 @@
-import { DataSource } from '@angular/cdk/collections';
 import { Component } from '@angular/core';
-import { Subject } from 'rxjs';
 import { Equipment } from 'src/app/modules/core/models/members-models';
 import { MemberApiService } from 'src/app/modules/core/services/member-api.service';
 

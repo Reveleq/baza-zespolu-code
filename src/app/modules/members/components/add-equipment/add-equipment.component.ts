@@ -1,6 +1,5 @@
-import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import {
   Equipment,
   MemberData,
@@ -71,8 +70,8 @@ export class AddEquipmentComponent implements OnInit {
           this.route.navigate(['/baza/rekwizyty']);
         },
         error: () => {
-          window.alert('wystąpił błąd, spróbuj ponownie')
-        }
+          window.alert('wystąpił błąd, spróbuj ponownie');
+        },
       });
   }
   ngOnInit(): void {

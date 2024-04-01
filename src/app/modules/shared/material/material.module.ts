@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,6 +30,6 @@ import { MatChipsModule } from '@angular/material/chips';
     MatNativeDateModule,
     MatChipsModule,
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pl-PL' }],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pl-PL' },{provide: LocationStrategy, useClass: HashLocationStrategy}],
 })
 export class MaterialModule {}

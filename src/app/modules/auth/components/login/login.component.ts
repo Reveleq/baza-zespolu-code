@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { UserLoginData } from 'src/app/modules/core/models/login-model';
 import { AuthenticationService } from 'src/app/modules/core/services/authentication.service';
 
@@ -29,11 +28,4 @@ export class LoginComponent {
       },
     });
   }
-
-  // public login() {
-  //   this.authenticationService.login(
-  //     this.form.get('email')!.value,
-  //     this.form!.get('password')!.value
-  //   );
-  // }
 }

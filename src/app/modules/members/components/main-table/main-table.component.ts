@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { MemberData } from 'src/app/modules/core/models/members-models';
 import { MemberApiService } from 'src/app/modules/core/services/member-api.service';
 import { MemberService } from 'src/app/modules/core/services/member.service';
@@ -18,11 +18,6 @@ export class MainTableComponent implements OnInit {
   displayedColumns: string[] = ['name', 'surname', 'class', 'more-info'];
   sub!: Subscription;
   ngOnInit(): void {
-    // this.sub = this.memberService.memberChanged.subscribe({
-    //   next: (arrMember) => (this.dataSource = arrMember),
-    // });
-
-    // if (this.dataSource.length === 0) {
     this.memberApiService.getDate().subscribe({
       next: (todos) => {
         this.dataSource = todos;

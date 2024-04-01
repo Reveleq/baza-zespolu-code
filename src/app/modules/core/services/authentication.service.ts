@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationClient } from 'src/app/clients/authentication.client';
 import { GetUsersResponse, User, UserLoginData } from '../models/login-model';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, map, tap } from 'rxjs';
@@ -13,12 +12,8 @@ export class AuthenticationService {
   islogged = false;
   apiUrl = environment.apiUrl;
   user = new BehaviorSubject<User | null>(null);
-  
-  constructor(
-    private authenticationClient: AuthenticationClient,
-    private router: Router,
-    private http: HttpClient
-  ) {}
+
+  constructor(private router: Router, private http: HttpClient) {}
 
   // public login(username: string, password: string): void {
   //   this.authenticationClient.login(username, password).subscribe((token) => {
